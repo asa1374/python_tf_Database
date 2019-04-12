@@ -4,19 +4,33 @@ $(document).ready(()=>{
 });
 
 var main = main || {}
-main = (e=>{
+main = (()=>{
     let avg_temp,min_temp,max_temp,rain_fall;
 
-    let init = e =>{
+    let init = () =>{
         avg_temp = $('#avg_temp');
         min_temp = $('#min_temp');
         max_temp = $('#max_temp');
         rain_fall = $('#rain_fall');
     };
-    let onCreate = e=>{
+    let onCreate = ()=>{
         setContentView();
     };
-    let setContentView = e=>{
+    let setContentView = ()=>{
+        login();
+    };
+    let cleardata= ()=>{
+        avg_temp.val('');
+        min_temp.val('');
+        max_temp.val('');
+        rain_fall.val('');
+    };
+    let login = ()=>{
+        $('#login_btn').click(()=>{
+
+        });
+    };
+    let predict_price = ()=>{
         $('#result_btn').click(e=>{
             e.preventDefault();
         alert('평균은 ' + avg_temp.val() +
@@ -29,12 +43,6 @@ main = (e=>{
                     }
                 });*/
             })
-    };
-    let cleardata= ()=>{
-        avg_temp.val('');
-        min_temp.val('');
-        max_temp.val('');
-        rain_fall.val('');
     };
     return {init : init,onCreate : onCreate}
 })();
